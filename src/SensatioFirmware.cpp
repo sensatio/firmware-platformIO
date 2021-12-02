@@ -38,24 +38,36 @@ Display *display = NULL;
 int currentVersion = 46;
 boolean printMemory = false;
 
-#ifdef NodeMCU
+#ifdef ESP8266_Generic
+  String board = "Generic";
+  char firmwareType[] = "ESP8266";
+#elif NodeMCU
   String board = "NodeMCU";
   char firmwareType[] = "ESP8266-NodeMCU";
-#elif ESP01_1M
+#elif ESP8266_1M
   String board = "Generic";
   char firmwareType[] = "ESP8266-1M";
 #elif ESP07
   String board = "ESP07";
   char firmwareType[] = "ESP8266-ESP07";
-#elif ESP12s
-  String board = "ESP12s";
-  char firmwareType[] = "ESP8266-ESP12s";
+#elif ESP12
+  String board = "ESP12";
+  char firmwareType[] = "ESP8266-ESP12";
 #elif D1_Mini
   String board = "D1Mini";
   char firmwareType[] = "ESP8266-D1Mini";
+#elif ESP32_Generic
+  String board = "Generic";
+  char firmwareType[] = "ESP32";
 #elif ESP32_DevKitC
   String board = "DevKitC";
   char firmwareType[] = "ESP32-DevKitC";
+#elif ESP32S
+  String board = "ESP32S";
+  char firmwareType[] = "ESP32-S";
+#elif ESP32_WROOM
+  String board = "ESP-WROOM-32";
+  char firmwareType[] = "ESP32-WROOM";
 #elif M5StickC
   String board = "M5StickC";
   char firmwareType[] = "ESP32-M5StickC";

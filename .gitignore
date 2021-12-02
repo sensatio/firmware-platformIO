@@ -4,3 +4,6 @@
 .vscode/launch.json
 .vscode/ipch
 .vscode
+/firmware_binaries
+/copy_firmware_binaries
+/merge_bin_esp.py
