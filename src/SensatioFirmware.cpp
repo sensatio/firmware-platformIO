@@ -11,6 +11,7 @@
     SOURCE: https://github.com/sensatio/firmware-platformIO.git
 
     @section  HISTORY
+    v47 - Added Support for MCP9600 thermocouple sensors and fixed a bug that caused a crash if multiple ADS1115 were configured
     v46 - Merge of ESP8266 and ESP32 Firmware into PlatformIO project
     v45 - Fixed Pressure Measurement for BME280 Sensors
     v44 - More Memory Improvements
@@ -35,7 +36,7 @@
 VisualisationHelper *vHelper;
 Display *display = NULL;
 
-int currentVersion = 46;
+int currentVersion = 47;
 boolean printMemory = false;
 
 #ifdef ESP8266_Generic

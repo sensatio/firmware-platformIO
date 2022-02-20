@@ -11,6 +11,7 @@
     SOURCE: https://github.com/sensatio/firmware-platformIO.git
 
     @section  HISTORY
+    v47 - Fixed a bug that caused a crash if multiple ADS1115 were configured
     v46 - Merge of ESP8266 and ESP32 Firmware into PlatformIO project
     v34 - First Public Release (Feature parity with ESP8266 Release v34)
 */
@@ -39,6 +40,7 @@ Ads1x15::Ads1x15 (long id, String category, String shortName, String name, Strin
 if ((addressString == NULL) || (addressString == "") || (addressString == "0x48")) {
     if (!init48)
     {
+      Serial.println("I48");
       init48 = true;
 
       if(type == "ADS1115")
@@ -54,10 +56,11 @@ if ((addressString == NULL) || (addressString == "") || (addressString == "0x48"
   else if (addressString == "0x49") {
     if (!init49)
     {
+      Serial.println("I49");
       init49 = true;
 
       if(type == "ADS1115")
-        ads1x15_48 = new Adafruit_ADS1115(0x49);
+        ads1x15_49 = new Adafruit_ADS1115(0x49);
       else
         ads1x15_49 = new Adafruit_ADS1015(0x49);
 
@@ -70,10 +73,11 @@ if ((addressString == NULL) || (addressString == "") || (addressString == "0x48"
   else if (addressString == "0x4A") {
     if (!init4A)
     {
+      Serial.println("I4A");
       init4A = true;
 
       if(type == "ADS1115")
-        ads1x15_48 = new Adafruit_ADS1115(0x4A);
+        ads1x15_4A = new Adafruit_ADS1115(0x4A);
       else
         ads1x15_4A = new Adafruit_ADS1015(0x4A);
 
@@ -85,10 +89,11 @@ if ((addressString == NULL) || (addressString == "") || (addressString == "0x48"
   else if (addressString == "0x4B") {
     if (!init4B)
     {
+      Serial.println("I4B");
       init4B = true;
 
       if(type == "ADS1115")
-        ads1x15_48 = new Adafruit_ADS1115(0x4B);
+        ads1x15_4B = new Adafruit_ADS1115(0x4B);
       else
         ads1x15_4B = new Adafruit_ADS1015(0x4B);
 

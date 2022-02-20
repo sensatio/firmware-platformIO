@@ -1,5 +1,5 @@
 /**************************************************************************/
-/*
+/*!
     @file     Bridge.cpp
     @author   M. Fegerl (Sensate Digital Solutions GmbH)
     @license  GPL (see LICENSE file)
@@ -973,6 +973,11 @@ void configureExpansionPort(int portNumber, JsonObject& portConfig) {
   {    
     addSensor(new SensorSI1145(portConfig["id"], portConfig["c"], portConfig["sn"], portConfig["n"], portConfig["ec1"], portConfig["ec2"], refreshInterval, postDataInterval, portConfig["s"]["svt"], calc));
   }
+  else if (portConfig["et"] == "MCP9600")
+  {
+    addSensor(new SensorMCP9600(portConfig["id"], portConfig["c"], portConfig["sn"], portConfig["n"], portConfig["ec1"], portConfig["ec2"], refreshInterval, postDataInterval, portConfig["s"]["svt"], calc));
+  }
+
   
 }
 

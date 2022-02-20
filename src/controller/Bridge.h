@@ -56,6 +56,7 @@
 #include "output/display/DisplayOLED128.h"
 #include "output/display/DisplayST7735.h"
 #include "output/VisualisationHelper.h"
+#include "../input/i2c/SensorMCP9600.h"
 
 #ifdef ESP8266_BOARD
   void initSSL();
